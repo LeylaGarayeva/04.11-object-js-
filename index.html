@@ -1,0 +1,74 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div style="height: 100px;background: blue" id="st"></div>
+        <span id="click" style="background: red;padding: 7px;color:white">click me</span>
+    </body>
+
+    <script>
+    var codeAcademy = {
+    name:"Code Academy",
+    address : "Baki",
+    phone: ["01264444","055255545"],
+    qrup:{
+        name:"P502",
+        student:["Leyla","Fidan","Leman","Humay"],
+        teacher:"Ismayil m.",
+        print_name:function(){
+                return this.student;
+        }, 
+        add:function(a){
+            return this.student.push(a)
+        },
+        
+        changeText:function(element){
+            element.innerHTML=this.student;
+        }
+    }
+     
+};
+   console.log (codeAcademy.name+ "-anin " + codeAcademy.qrup.name + " qrupunda "+ codeAcademy.qrup.student.length + " telebe var");
+
+   // ================================
+    codeAcademy.qrup.add("Aytac");
+    codeAcademy.qrup.add("Eliaga");
+    console.log(codeAcademy.qrup.student)
+
+    // ======================
+
+    var st=document.getElementById("st");
+    var click=document.getElementById("click");
+
+    click.addEventListener("click",names);
+
+    function names(){
+        st.innerText=codeAcademy.qrup.student;
+        st.style.color="white";
+    }
+    // ==================
+    codeAcademy.qrup.changeText(st);
+
+
+
+    // ====================================
+
+    var Academy = function(){
+            this.name="Code Academy",
+            this.address="Hesen Eliyev",
+            this.setaddress=function(newAddress){
+            this.address=newAddress;
+        }
+    }
+    var ComputerAcademy =new Academy();
+    var CodeAcademy =new Academy();
+    CodeAcademy.setaddress("yasamal");
+    console.log(CodeAcademy.address);
+    console.log(ComputerAcademy.address);
+
+ 
+    </script>
+</html>
+
+
